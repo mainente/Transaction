@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#f1f1f1"
+
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/form_transaction"
+
+        android:layout_margin="10dp"
+        android:layout_height="match_parent">
+
+
+
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_layout"
+
+            android:hint="@string/card_holder"
+
+            android:id="@+id/card_holder"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_layout"
+            android:layout_marginTop="5dp"
+
+            android:hint="@string/card_number"
+            android:inputType="number"
+
+            android:id="@+id/card_number"
+
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/card_brand"
+                android:layout_marginTop="5dp"
+
+
+                android:background="@drawable/edit_text_layout"
+
+                android:hint="@string/card_brand"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+
+            android:weightSum="2"
+            >
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_layout"
+                android:inputType="number"
+
+
+                android:hint="@string/expiration_month"
+                android:layout_weight="1"
+
+                android:id="@+id/expiration_month"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_layout"
+                android:layout_weight="1"
+                android:inputType="number"
+
+
+                android:layout_marginLeft="5dp"
+
+                android:hint="@string/expiration_year"
+
+                android:id="@+id/expiration_year"
+
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+
+        </LinearLayout>
+
+
+
+
+
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/CVV"
+                android:layout_marginTop="5dp"
+
+                android:inputType="number"
+
+
+                android:hint="@string/CVV"
+                android:background="@drawable/edit_text_layout"
+
+
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+
+
+
+
+
+
+
+    </LinearLayout>
+    </LinearLayout>

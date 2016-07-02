@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <color name="color_keypad_button">#B8B8B8</color>
+    <color name="color_keypad_darker_button">#a1a1a1</color>
+    <color name="color_background">#f1f1f1</color>
+    <color name="color_button_font_color">#ffffff</color>
+
+
+
+    <style name="button_keypad" parent="@android:style/Widget.Button">
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textColor">@color/color_button_font_color</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minWidth">20dp</item>
+        <item name="android:minHeight">20dp</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:background">@layout/button_keypad_selector</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+</resources>

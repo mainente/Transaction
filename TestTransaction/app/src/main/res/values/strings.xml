@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">TestTransaction</string>
+
+    <string name="title_section1">Nova Venda</string>
+    <string name="title_section2">Lista de Transação</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="charge_hint_type_value_with_decimals">Valor da venda</string>
+    <string name="charge_label_currency_sign_small">R$</string>
+    <string name="btn_next">Avançar</string>
+    <string name="card_holder">Titular do Cartão</string>
+    <string name="card_number">Número do Cartão</string>
+    <string name="card_brand">Bandeira</string>
+    <string name="expiration_month">Mês Venc</string>
+    <string name="expiration_year">Ano Venc</string>
+    <string name="CVV">CVV</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

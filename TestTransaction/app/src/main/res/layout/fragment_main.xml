@@ -1,0 +1,133 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity$PlaceholderFragment"
+    android:background="#f1f1f1"
+
+    android:orientation="vertical"
+   >
+
+
+    <ScrollView
+        android:id="@+id/scrollViewContents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:fillViewport="true" >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+                    <LinearLayout
+                android:id="@+id/linearLayoutMaster"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <TextView
+                    android:id="@+id/textViewLabelPaymentAction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="@string/charge_hint_type_value_with_decimals"
+                    android:textAlignment="gravity"
+                    android:textSize="40sp" />
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical|left"
+                        android:maxLines="1"
+                        android:text="@string/charge_label_currency_sign_small"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/editTextValueToCharge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:editable="false"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center_vertical|right"
+                        android:hint="888.888"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:textSize="40sp" />
+
+
+
+                </LinearLayout>
+
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#bebebe" >
+            </FrameLayout>
+
+
+
+
+
+            <ViewFlipper
+                android:id="@+id/layoutFlipperPane"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                />
+
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#32CD32"
+
+
+        android:text="@string/btn_next" />
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>
+
+
+</LinearLayout>
+
+
