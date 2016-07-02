@@ -41,7 +41,13 @@ public class TransactionsAdapter extends BaseAdapter {
 			TextView value=(TextView)convertView.findViewById(R.id.tvalue);
 			TextView status=(TextView)convertView.findViewById(R.id.tstatus);
 			TextView date=(TextView)convertView.findViewById(R.id.tdate);
-			value.setText(c.getString(c.getColumnIndex("value")));
+
+			BigDecimal bValue=new BigDecimal(c.getString(c.getColumnIndex("value")));
+
+			String sValue=Extras.getInstance().formatBigDecimalAsLocalMoneyString(bValue);
+
+
+			value.setText(sValue);
 			status.setText(c.getString(c.getColumnIndex("status")));
 			date.setText(c.getString(c.getColumnIndex("dateTransaction")));
 			String teste=value.getText().toString();

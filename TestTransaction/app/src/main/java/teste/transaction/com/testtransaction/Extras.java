@@ -74,20 +74,6 @@ public class Extras {
 	
 
 
-	public static Date getDateFromFullZoopAPITimestampString(String sTimestamp) throws ParseException {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:sszzzzz");
-	    Date parsedData = new Date();
-	    parsedData = dateFormat.parse(sTimestamp);
-	    return parsedData;
-	}
-
-	public static Date getDateFromTimestampStringAtTimezone(String sTimestamp, String sTimezoneId) throws ParseException {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:sszzzzz");
-		dateFormat.setTimeZone(TimeZone.getTimeZone(sTimezoneId));
-	    Date parsedData = new Date();
-	    parsedData = dateFormat.parse(sTimestamp);
-	    return parsedData;
-	}
 
 
 
@@ -206,7 +192,7 @@ public class Extras {
 		} catch (Exception e) {
 
             try {
-                getBigDecimalFromDecimalStringInZoopPaymentsFormat(sMoneyValue);
+                getBigDecimalFromDecimalStringInPaymentsFormat(sMoneyValue);
             }
             catch (Exception e2) {
             }
@@ -214,9 +200,9 @@ public class Extras {
 		}
 	}
 
-    public BigDecimal getBigDecimalFromDecimalStringInZoopPaymentsFormat(String sDecimal) {
+    public BigDecimal getBigDecimalFromDecimalStringInPaymentsFormat(String sDecimal) {
         try {
-            BigDecimal value = getBigDecimalFromDecimalStringInZoopPaymentsFormatRaw(sDecimal);
+            BigDecimal value = getBigDecimalFromDecimalStringInPaymentsFormatRaw(sDecimal);
             return value;
         }
         catch (Exception e) {
@@ -226,16 +212,16 @@ public class Extras {
     }
 
 
-	public BigDecimal getBigDecimalFromDecimalStringInZoopPaymentsFormatRaw(String sDecimal) throws ParseException {
-		DecimalFormat numberZoopAPIDecimalFormatter = (DecimalFormat) DecimalFormat.getInstance(Locale.US);
-		numberZoopAPIDecimalFormatter.setParseBigDecimal(true);
+	public BigDecimal getBigDecimalFromDecimalStringInPaymentsFormatRaw(String sDecimal) throws ParseException {
+		DecimalFormat numberAPIDecimalFormatter = (DecimalFormat) DecimalFormat.getInstance(Locale.US);
+		numberAPIDecimalFormatter.setParseBigDecimal(true);
 
 		try {
-			numberZoopAPIDecimalFormatter.setRoundingMode(RoundingMode.HALF_DOWN);
+			numberAPIDecimalFormatter.setRoundingMode(RoundingMode.HALF_DOWN);
 		}
 		catch (Exception e2) {
 		}
-        BigDecimal value = (BigDecimal) numberZoopAPIDecimalFormatter.parse(sDecimal);
+        BigDecimal value = (BigDecimal) numberAPIDecimalFormatter.parse(sDecimal);
         return value;
 	}
 	

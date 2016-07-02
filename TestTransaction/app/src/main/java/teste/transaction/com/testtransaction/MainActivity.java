@@ -270,9 +270,8 @@ public class MainActivity extends AppCompatActivity
 
 
                     }
-                    else if (flipCurrentView == R.layout.flipper_approved) {
+                    else if (flipCurrentView == R.layout.flipper_approved || flipCurrentView==R.layout.flipper_failed) {
 
-                        Transaction.getInstance().setInstance(null);
 
                         Intent intent = new Intent(getActivity(), MainActivity.class);
                         startActivity(intent);
@@ -327,8 +326,13 @@ public class MainActivity extends AppCompatActivity
 
                     joResponse=Session.getInstance().httpSynchronousRequest(url,requestParams);
 
+                    joResponse.toString();
+
+
+                    Transaction.getInstance().setStatus(joResponse.getString("status"));
 
                     return true;
+                    
 
 
 
@@ -356,7 +360,6 @@ public class MainActivity extends AppCompatActivity
 
 
 
-                        Transaction.getInstance().setStatus(joResponse.getString("status"));
 
                         DbController db = new DbController(getActivity());
                         Boolean insertDb = db.insertTransaction();
@@ -375,6 +378,16 @@ public class MainActivity extends AppCompatActivity
 
                     }
                 } else {
+
+                    FlipperFailed flipperFailed = new FlipperFailed();
+                    flipperFailed.initializeHistory();
+                    flipperFailed.setBaseView((ViewFlipper) getActivity().findViewById(R.id.layoutFlipperPane));
+                    flipperFailed.flipToPane(getActivity());
+
+                    flipCurrentView = R.layout.flipper_failed;
+
+                    next.setText("Nova Venda");
+                    Transaction.getInstance().setInstance(null);
 
 
                 }

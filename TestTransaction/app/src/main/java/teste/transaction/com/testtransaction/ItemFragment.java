@@ -66,6 +66,7 @@ public class ItemFragment extends Fragment  {
      */
     public ItemFragment() {
     }
+    Cursor c;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,8 +77,11 @@ public class ItemFragment extends Fragment  {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         DbController db=new DbController(getActivity());
-        Cursor c=db.listPayment();
+         c=db.listPayment();
         transactionsAdapter = new TransactionsAdapter(getActivity(), c);
+
+
+
 
     }
 
@@ -88,7 +92,22 @@ public class ItemFragment extends Fragment  {
 
         // Set the adapter
         mListView = (AbsListView) view.findViewById(android.R.id.list);
+        TextView infolist=(TextView)view.findViewById(R.id.tInfoTransaction);
+
         mListView.setAdapter(transactionsAdapter);
+        if(!c.moveToFirst()){
+            mListView.setVisibility(View.GONE);
+            infolist.setVisibility(View.VISIBLE);
+            infolist.setText("Nenhuma venda foi realizada");
+
+
+        }else {
+
+            infolist.setVisibility(View.GONE);
+            mListView.setVisibility(View.VISIBLE);
+
+
+        }
 
         // Set OnItemClickListener so we can be notified on item clicks
 

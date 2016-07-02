@@ -47,12 +47,6 @@ public abstract class FlipperPane {
 		
 		currentActivity = pCurrentActivity;
 		layoutResourceId = getLayoutResourceId();
-		
-//		ViewFlipper viewFlipper = (LinearLayout) currentActivity.findViewById(R.id.LinearLayoutPaymentRightPaneFlipper);
-//		linearLayoutPaymentPane.removeAllViews();
-	
-//viewFlipper = (ViewFlipper) currentActivity.findViewById(R.id.LinearLayoutPaymentRightPaneFlipper);
-//viewFlipper.removeAllViews();
 
 		View child = currentActivity.getLayoutInflater().inflate(layoutResourceId, viewFlipper, false);
 		viewFlipper.addView(child, history.size());
@@ -70,27 +64,7 @@ public abstract class FlipperPane {
 		
 		history.add(layoutResourceId);
 		
-/*
-		Button buttonCancel = (Button) child.findViewById(R.id.buttonPaymentCancel);
-		buttonCancel.setOnClickListener( new OnClickListener() {			
-			@Override
-			public void onClick(View v) {
-				datecs.cancel();
-			}
-		});
-		 
-  		((TextView) child.findViewById(R.id.textViewPaymentChipAndPINMessage)).setText("Initializing Card Terminal");
- 
-		
-	    datecs = new DatecsBluepad50();
-		try {
-			
-			datecs.charge(ZoopDB.getInstance().getCurrentOrderTotalPlusTaxes());
-		}
-		catch (Exception e) {
-			ZLog.exception("DATECS error on Zoop Checkout", e);
-		}
-*/		
+
 	}
 
 	public abstract void onFlip();
@@ -101,17 +75,7 @@ public abstract class FlipperPane {
 	public static void showFirst(Activity currentActivity) {
 		viewFlipper.setDisplayedChild(0);
 		
-/*		for (int i= history.size()-1; i>=0; i--) {
-			viewFlipper.removeViewAt(i);
-			history.remove(i);	
-		}
-		View child = currentActivity.getLayoutInflater().inflate(history.get(0), viewFlipper, false);
-		viewFlipper.addView(child, 0);
 
-		viewFlipper.setInAnimation(AnimationUtils.loadAnimation(currentActivity,  R.anim.push_right_in));
-		viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(currentActivity, R.anim.push_right_out));
-		viewFlipper.showPrevious();
-*/				
 	}
 	
 	public void showPrevious() {
